@@ -66,7 +66,7 @@
             .step-connector::after { display: none; }
         }
 
-        .discount-badge {
+        .discount-badge-label {
             background: linear-gradient(135deg, #f97316, #ea580c);
             clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
         }
@@ -157,7 +157,7 @@
                 <div class="product-card bg-white rounded-3xl overflow-hidden shadow-md">
                     <div class="relative h-56 bg-gray-100">
                         <img src="https://lh3.googleusercontent.com/pw/AP1GczO3SOU6WaYiDxl31EeysltctxPWxIGd9ZMT45LREGfBIZIszyw2kiPhTBaNG4fwA6sCdVnZfJG8-NGV_4VrM0K6Yr6aqmX1KyOE6krREZj_ME2-J1kNJMPybGcvacpDsgFOgf3DsIIqg0N42OKuURw=w1605-h903-s-no-gm?authuser=0" alt="極上飛魚卵香腸" class="w-full h-full object-cover">
-                        <div class="absolute top-4 right-4 discount-badge text-white text-xs font-bold px-3 py-2">熱銷中</div>
+                        <div class="absolute top-4 right-4 discount-badge-label text-white text-xs font-bold px-3 py-2">熱銷中</div>
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-[#1e3a5f] mb-2">極上飛魚卵香腸</h3>
@@ -185,7 +185,7 @@
                 <!-- Product 3 -->
                 <div class="product-card bg-white rounded-3xl overflow-hidden shadow-md">
                     <div class="relative h-56 bg-gray-100">
-                        <img src="https://lh3.googleusercontent.com/pw/AP1GczP5yNLLcFnM6mdOIXds1xdxf3yAvjZRsnTMBWzgSUFmU43IoONE-5jkvuUStSKyExw44L5s2WKmljyucD4IUinVP1OWE6ThYZgnxmlllCSewWgYxuApkv5zoimM2HdrqFfdPYxBDigu-zM5Jjktlh8=w1346-h903-s-no-gm?authuser=0" alt="禮盒組" class="w-full h-full object-cover">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczP5yNLLcFnM6mdOIXds1xdxf3yAvjZRsnTMBWzgSUFmU43IoONE-5jkvuUStSKyExw44L5s2WKmljyucD4IUinVP1OWE6ThYZgnxmlllCSewWgYxuApkv5zoimM2HdrqFfdPYxBDigu-zM5Jjktlh8=w1346-h903-s-no-gm?authuser=0" alt="經典紙盒禮盒" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-[#1e3a5f] mb-2">經典紙盒禮盒</h3>
@@ -349,38 +349,61 @@
         </div>
     </section>
 
-    <!-- Shipping & Promo Section -->
+    <!-- Updated Shipping & Promo Section (Aligned with image_10db65.png) -->
     <section class="py-20 px-4 bg-orange-50">
-        <div class="max-w-4xl mx-auto">
+        <div class="max-w-5xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white p-8 rounded-3xl shadow-lg border-2 border-blue-900">
-                    <h3 class="text-2xl font-black text-blue-900 mb-6 flex items-center gap-3">
-                        <span class="text-3xl">🚚</span> 運費說明
-                    </h3>
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-center border-b pb-2">
-                            <span class="text-gray-600">冷凍宅配</span>
-                            <span class="font-bold text-blue-900">$200</span>
+                <!-- Shipping Card -->
+                <div class="bg-white rounded-[40px] p-8 shadow-xl border-4 border-[#1e3a5f] relative flex flex-col h-full">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-16 h-16 bg-[#1e3a5f] rounded-full flex items-center justify-center text-3xl shadow-md">
+                            🚚
                         </div>
-                        <div class="bg-orange-100 p-4 rounded-xl text-orange-700 font-bold text-center">
-                            滿 $3,000 免運費！
+                        <h3 class="text-3xl font-black text-[#1e3a5f]">運費說明</h3>
+                    </div>
+                    <div class="flex-grow flex flex-col gap-6">
+                        <div class="bg-blue-50 rounded-3xl p-6 flex flex-col items-center justify-center text-center shadow-inner">
+                            <p class="text-gray-600 text-lg mb-1">黑貓冷凍宅配 <span class="text-4xl font-black text-[#1e3a5f] ml-1">$200</span></p>
+                            <p class="text-gray-400 font-medium">全程冷凍配送保證新鮮有保障</p>
+                        </div>
+                        <div class="bg-orange-100 rounded-3xl p-5 flex items-center justify-center text-center shadow-inner">
+                            <p class="text-xl font-black text-orange-600 flex items-center gap-2">
+                                <span class="text-2xl">🎉</span> 滿 $3,000 免運費！
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="bg-white p-8 rounded-3xl shadow-lg border-2 border-orange-500">
-                    <h3 class="text-2xl font-black text-orange-600 mb-6 flex items-center gap-3">
-                        <span class="text-3xl">🎁</span> 滿額優惠
-                    </h3>
-                    <ul class="space-y-4">
-                        <li class="flex justify-between items-center bg-orange-50 p-3 rounded-lg">
-                            <span class="text-gray-700">滿 $5,000</span>
-                            <span class="bg-orange-500 text-white px-2 py-1 rounded text-sm">95折</span>
-                        </li>
-                        <li class="flex justify-between items-center bg-orange-50 p-3 rounded-lg">
-                            <span class="text-gray-700">滿 $10,000</span>
-                            <span class="bg-orange-500 text-white px-2 py-1 rounded text-sm">9折</span>
-                        </li>
-                    </ul>
+
+                <!-- Promo Card -->
+                <div class="bg-white rounded-[40px] p-8 shadow-xl border-4 border-orange-500 relative flex flex-col h-full">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center text-3xl shadow-md">
+                            🎁
+                        </div>
+                        <h3 class="text-3xl font-black text-orange-500">滿額優惠</h3>
+                    </div>
+                    <div class="flex-grow flex flex-col gap-4">
+                        <!-- Discount 95 -->
+                        <div class="bg-orange-50 rounded-3xl p-6 relative overflow-hidden shadow-inner group">
+                            <div class="absolute top-0 right-0 bg-[#f97316] text-white text-sm font-bold px-5 py-2 rounded-bl-2xl shadow-sm">
+                                95折
+                            </div>
+                            <div class="flex flex-col">
+                                <p class="text-gray-700 text-xl font-medium">滿 <span class="text-3xl font-black text-[#1e3a5f]">$5,264</span></p>
+                                <p class="text-orange-600 font-black text-lg mt-1">享 95 折（折後滿 $5,000）</p>
+                            </div>
+                        </div>
+                        <!-- Discount 90 -->
+                        <div class="bg-orange-100/50 rounded-3xl p-6 relative overflow-hidden shadow-inner">
+                            <div class="absolute top-0 right-0 bg-[#ea580c] text-white text-sm font-bold px-5 py-2 rounded-bl-2xl shadow-sm">
+                                9折
+                            </div>
+                            <div class="flex flex-col">
+                                <p class="text-gray-700 text-xl font-medium">滿 <span class="text-3xl font-black text-[#1e3a5f]">$11,112</span></p>
+                                <p class="text-orange-600 font-black text-lg mt-1">享 9 折（折後滿 $10,000）</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -452,8 +475,8 @@
                 </div>
             </div>
             
-            <!-- Google Map Embed (Pinned to provided location) -->
-            <div class="rounded-3xl overflow-hidden shadow-lg border-4 border-white h-[450px]">
+            <!-- Google Map Embed (Requested Precise Pinned location) -->
+            <div class="rounded-[40px] overflow-hidden shadow-2xl border-8 border-white h-[450px]">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3611.7974721080695!2d121.79592946032716!3d25.142537090346018!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x345d4f0069c4a9f9%3A0x51b2207dde17a05c!2z5Y2a5Yud6KGM6aOb6a2a5Y216aaZ6IW4!5e0!3m2!1szh-TW!2stw!4v1773768867798!5m2!1szh-TW!2stw" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
