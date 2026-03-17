@@ -1,594 +1,488 @@
 <!doctype html>
 <html lang="zh-TW" class="h-full">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>博勝行飛魚卵香腸</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="/_sdk/element_sdk.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
-  <style>
-    body {
-      box-sizing: border-box;
-    }
-    * {
-      font-family: 'Noto Sans TC', sans-serif;
-    }
-    .wave-bg {
-      background: linear-gradient(180deg, #1e3a5f 0%, #2d4a6f 100%);
-      position: relative;
-      overflow: hidden;
-    }
-    .wave-bg::before {
-      content: '';
-      position: absolute;
-      bottom: -50px;
-      left: 0;
-      right: 0;
-      height: 100px;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23fff8f0' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") no-repeat bottom;
-      background-size: cover;
-    }
-    .bubble {
-      animation: float 3s ease-in-out infinite;
-    }
-    .bubble:nth-child(2) { animation-delay: 0.5s; }
-    .bubble:nth-child(3) { animation-delay: 1s; }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    .product-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    }
-    .step-connector {
-      position: relative;
-    }
-    .step-connector::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      right: -30px;
-      width: 60px;
-      height: 3px;
-      background: linear-gradient(90deg, #f97316, #ea580c);
-    }
-    @media (max-width: 768px) {
-      .step-connector::after {
-        display: none;
-      }
-    }
-    .discount-badge {
-      background: linear-gradient(135deg, #f97316, #ea580c);
-      clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
-    }
-    .fish-pattern {
-      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 15c8 0 15 5 15 10s-7 10-15 10-15-5-15-10 7-10 15-10z' fill='%23f97316' fill-opacity='0.05'/%3E%3C/svg%3E");
-    }
-  </style>
-  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
- </head>
- <body class="h-full bg-[#fff8f0] fish-pattern">
-  <div id="app" class="w-full h-full overflow-auto"><!-- Hero Section -->
-   <section class="wave-bg min-h-[600px] md:min-h-[700px] flex items-center justify-center px-4 py-16 md:py-24">
-    <div class="max-w-4xl mx-auto text-center relative z-10"><!-- Logo/Brand -->
-     <div class="mb-6"><img src="https://media.canva.com/v2/image-resize/format:PNG/height:563/quality:100/uri:ifs%3A%2F%2FM%2Fab2fba49-59dc-469f-aa8a-344225407d2e/watermark:F/width:565?csig=AAAAAAAAAAAAAAAAAAAAAAEw_2HwOxnGehsHaFFUVH9bzuVsybHwf0flHOQYefT7&amp;exp=1768595122&amp;osig=AAAAAAAAAAAAAAAAAAAAAFfSsdHqj5czFwPkTgAkKC6eacQH7vzRy-FRaTsmD4MF&amp;signer=media-rpc&amp;x-canva-quality=screen" alt="博勝行飛魚卵香腸 LOGO" loading="lazy" onerror="this.style.display='none';" class="mx-auto" style="width: 150px; height: auto;">
-     </div><!-- Floating Bubbles -->
-     <div class="flex justify-center gap-4 mb-6">
-      <div class="bubble w-4 h-4 bg-orange-400 rounded-full opacity-80"></div>
-      <div class="bubble w-3 h-3 bg-orange-300 rounded-full opacity-70"></div>
-      <div class="bubble w-5 h-5 bg-orange-500 rounded-full opacity-90"></div>
-     </div><!-- Main Title -->
-     <h1 id="hero-title" class="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6 drop-shadow-lg">飛魚卵香腸<br><span class="text-orange-400">每一口咬下都是大海的味道</span></h1><!-- Subtitle -->
-     <p id="hero-subtitle" class="text-lg md:text-xl lg:text-2xl text-blue-100 mb-10 max-w-2xl mx-auto leading-relaxed">基隆八斗子在地職人 X 博勝行飛魚卵香腸<br class="hidden md:block">
-       高達<span class="text-orange-400 font-bold">30%爆卵飛魚卵</span> + 黑豬肉鮮嫩絞和 + <span class="text-orange-400 font-bold">甘蔗煙燻古法</span><br class="hidden md:block">
-       每口<span class="text-orange-400 font-bold">啵啵啵</span>，海味直擊心頭 漁村限定，過年必備伴手禮！</p><!-- CTA Buttons -->
-     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center"><a href="https://www.facebook.com/porksonfood" target="_blank" rel="noopener noreferrer" class="group w-full sm:w-auto bg-white text-[#1e3a5f] px-8 py-4 rounded-full text-lg md:text-xl font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 flex items-center justify-center gap-3">
-       <svg class="w-7 h-7 text-blue-600" fill="currentColor" viewbox="0 0 24 24">
-        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-       </svg> 看最新消息與私訊詢問 </a> <a href="https://forms.gle/gxt5jKdJdok6Yr3n8" target="_blank" rel="noopener noreferrer" class="group w-full sm:w-auto bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-full text-lg md:text-xl font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 flex items-center justify-center gap-3">
-       <svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-       </svg> 立即填單訂購 </a>
-     </div>
-    </div>
-   </section><!-- Products Section -->
-   <section class="py-16 md:py-24 px-4 bg-[#fff8f0]">
-    <div class="max-w-6xl mx-auto">
-     <div class="text-center mb-12"><span class="inline-block bg-orange-100 text-orange-600 px-4 py-2 rounded-full text-sm font-bold mb-4">精選商品</span>
-      <h2 class="text-3xl md:text-4xl font-black text-[#1e3a5f] mb-4">我們的產品</h2>
-      <p class="text-gray-600 text-lg">每一條香腸都是職人用心之作</p>
-     </div>
-     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"><!-- Product 1 -->
-      <div class="product-card bg-white rounded-3xl overflow-hidden shadow-lg">
-       <div class="relative h-48 bg-white overflow-hidden"><img src="https://lh3.googleusercontent.com/pw/AP1GczO3SOU6WaYiDxl31EeysltctxPWxIGd9ZMT45LREGfBIZIszyw2kiPhTBaNG4fwA6sCdVnZfJG8-NGV_4VrM0K6Yr6aqmX1KyOE6krREZj_ME2-J1kNJMPybGcvacpDsgFOgf3DsIIqg0N42OKuURw=w1605-h903-s-no-gm?authuser=0" alt="極上飛魚卵香腸" loading="lazy" onerror="console.error('Image failed to load:', this.src); this.style.background='#e5e7eb'; this.alt='圖片載入失敗';" class="w-full h-full object-cover">
-        <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2"><span class="bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-bold shadow-lg">熱門推薦</span>
-        </div>
-        <div class="absolute top-4 right-4 discount-badge text-white text-xs font-bold px-3 py-2">
-         優惠中
-        </div>
-       </div>
-       <div class="p-5">
-        <h3 class="text-xl font-black text-[#1e3a5f] mb-2">極上飛魚卵香腸</h3>
-        <p class="text-gray-500 text-sm mb-3">5入/包・300g</p>
-        <ul class="text-sm text-gray-600 mb-4 space-y-1">
-         <li class="flex items-center gap-2"><span class="text-orange-500">✓</span> 高比例飛魚卵</li>
-         <li class="flex items-center gap-2"><span class="text-orange-500">✓</span> 甘蔗煙燻古法</li>
-         <li class="flex items-center gap-2"><span class="text-orange-500">✓</span> 啵啵口感超過癮</li>
-        </ul>
-        <div class="flex items-center justify-between">
-         <div><span class="text-gray-400 line-through text-sm">$450</span> <span class="text-2xl font-black text-orange-500 ml-2">$370</span>
-         </div>
-        </div>
-       </div>
-      </div><!-- Product 2 -->
-      <div class="product-card bg-white rounded-3xl overflow-hidden shadow-lg">
-       <div class="relative h-48 bg-white overflow-hidden"><img src="https://lh3.googleusercontent.com/pw/AP1GczNm9Q867I1PJm5IJ-O6aQcnPQO3FjohXQ1ZQpa9aaV9OwsTzhUUo02vletvROL2nPQXyjYw_UX8lIx873GHS69FDaEcqhgp4sGYJnbobi8nO3xHO8eknZiFPwJ2L76emgslIjcHrnVkYXujH8SZNBw=w903-h903-s-no-gm?authuser=0" alt="口袋飛魚卵香腸" loading="lazy" onerror="this.src=''; this.alt='圖片載入失敗'; this.style.display='none';" class="w-full h-full object-cover">
-        <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2"><span class="bg-[#1e3a5f] text-white text-xs px-3 py-1 rounded-full font-bold shadow-lg">即食方便</span>
-        </div>
-        <div class="absolute top-4 right-4 discount-badge text-white text-xs font-bold px-3 py-2">
-         優惠中
-        </div>
-       </div>
-       <div class="p-5">
-        <h3 class="text-xl font-black text-[#1e3a5f] mb-2">口袋飛魚卵香腸</h3>
-        <p class="text-gray-500 text-sm mb-3">1入/包・60g・可即食</p>
-        <ul class="text-sm text-gray-600 mb-4 space-y-1">
-         <li class="flex items-center gap-2"><span class="text-orange-500">✓</span> 甘蔗煙燻香氣</li>
-         <li class="flex items-center gap-2"><span class="text-orange-500">✓</span> 撕開即食方便</li>
-         <li class="flex items-center gap-2"><span class="text-orange-500">✓</span> 野餐露營必備</li>
-        </ul>
-        <div class="flex items-center justify-between">
-         <div><span class="text-gray-400 line-through text-sm">$90</span> <span class="text-2xl font-black text-orange-500 ml-2">$80</span>
-         </div>
-        </div>
-       </div>
-      </div><!-- Product 3 -->
-      <div class="product-card bg-white rounded-3xl overflow-hidden shadow-lg">
-       <div class="relative h-48 bg-white overflow-hidden"><img src="https://lh3.googleusercontent.com/pw/AP1GczP5yNLLcFnM6mdOIXds1xdxf3yAvjZRsnTMBWzgSUFmU43IoONE-5jkvuUStSKyExw44L5s2WKmljyucD4IUinVP1OWE6ThYZgnxmlllCSewWgYxuApkv5zoimM2HdrqFfdPYxBDigu-zM5Jjktlh8=w1346-h903-s-no-gm?authuser=0" alt="口袋香腸紙盒禮盒" loading="lazy" onerror="this.src=''; this.alt='圖片載入失敗'; this.style.display='none';" class="w-full h-full object-cover">
-        <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2"><span class="bg-[#1e3a5f] text-white text-xs px-3 py-1 rounded-full font-bold shadow-lg">送禮首選</span>
-        </div>
-       </div>
-       <div class="p-5">
-        <h3 class="text-xl font-black text-[#1e3a5f] mb-2">口袋香腸紙盒禮盒</h3>
-        <p class="text-gray-500 text-sm mb-3">5入禮盒</p>
-        <ul class="text-sm text-gray-600 mb-4 space-y-1">
-         <li class="flex items-center gap-2"><span class="text-orange-500">✓</span> 精美禮盒包裝</li>
-         <li class="flex items-center gap-2"><span class="text-orange-500">✓</span> 送禮大方體面</li>
-         <li class="flex items-center gap-2"><span class="text-orange-500">✓</span> 節慶伴手禮</li>
-        </ul>
-        <div class="flex items-center justify-between">
-         <div><span class="text-2xl font-black text-orange-500">$400</span>
-         </div>
-        </div>
-       </div>
-      </div><!-- Product 4 -->
-      <div class="product-card bg-white rounded-3xl overflow-hidden shadow-lg">
-       <div class="relative h-48 bg-white overflow-hidden"><img src="https://lh3.googleusercontent.com/pw/AP1GczNWBHTt8-0Q90V6aYbjJWm2RNwjIS7Za1s3MnmSOUHdt-sfdgnxtD-Y1Yakvxh5YpDWFdpBtObSg9xfH7AoB33BvUKcYRnVrK-FTIRsIWU4rxbcFDLFnNf1xUmoR23w-y-glS-uHR6LVU0ksaljSwQ=w1355-h903-s-no-gm?authuser=0" alt="口袋香腸木質禮盒" loading="lazy" onerror="this.src=''; this.alt='圖片載入失敗'; this.style.display='none';" class="w-full h-full object-cover">
-        <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2"><span class="bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-bold shadow-lg">頂級質感</span>
-        </div>
-        <div class="absolute top-4 right-4 discount-badge text-white text-xs font-bold px-3 py-2">
-         優惠中
-        </div>
-       </div>
-       <div class="p-5">
-        <h3 class="text-xl font-black text-[#1e3a5f] mb-2">口袋香腸木質禮盒</h3>
-        <p class="text-gray-500 text-sm mb-3">5入禮盒</p>
-        <ul class="text-sm text-gray-600 mb-4 space-y-1">
-         <li class="flex items-center gap-2"><span class="text-orange-500">✓</span> 頂級木質禮盒</li>
-         <li class="flex items-center gap-2"><span class="text-orange-500">✓</span> 頂級送禮之選</li>
-         <li class="flex items-center gap-2"><span class="text-orange-500">✓</span> 收藏級包裝</li>
-        </ul>
-        <div class="flex items-center justify-between">
-         <div><span class="text-gray-400 line-through text-sm">$600</span> <span class="text-2xl font-black text-orange-500 ml-2">$550</span>
-         </div>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section><!-- Media Coverage Section -->
-   <section class="py-16 md:py-24 px-4 bg-white">
-    <div class="max-w-6xl mx-auto">
-     <div class="text-center mb-12"><span class="inline-block bg-orange-100 text-orange-600 px-4 py-2 rounded-full text-sm font-bold mb-4">媒體報導</span>
-      <h2 class="text-3xl md:text-4xl font-black text-[#1e3a5f] mb-4">新聞/專題報導</h2>
-      <p class="text-gray-600 text-lg">各大媒體爭相報導的飛魚卵香腸</p>
-     </div>
-     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8"><!-- Video 1 -->
-      <div class="bg-gradient-to-br from-blue-50 to-orange-50 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow">
-       <div class="aspect-video bg-gradient-to-br from-blue-900 to-indigo-900 relative overflow-hidden flex items-center justify-center">
-        <div class="text-center">
-         <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-2xl hover:scale-110 transition-transform">
-          <svg class="w-10 h-10 text-white ml-1" fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z" />
-          </svg>
-         </div>
-         <p class="text-white text-lg font-bold">點擊下方按鈕觀看影片</p>
-        </div>
-       </div>
-       <div class="p-6">
-        <div class="flex items-center gap-2 mb-3"><span class="bg-red-500 text-white text-xs px-3 py-1 rounded-full font-bold">📺 新聞專題</span> <span class="bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-bold">年代新聞</span>
-        </div>
-        <h3 class="text-xl font-black text-[#1e3a5f] mb-2">唯一「爆卵」飛魚卵香腸「海上黃金」延續漁村文化</h3>
-        <p class="text-gray-600 text-sm mb-4">年代新聞〈台灣向錢衝〉專題報導</p><a href="https://www.youtube.com/watch?v=OuYya_uUrF0" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full bg-red-600 text-white font-bold py-3 px-4 rounded-xl hover:bg-red-700 transition-colors shadow-lg">
-         <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-         </svg> 在 YouTube 觀看完整影片 </a>
-       </div>
-      </div><!-- Video 2 -->
-      <div class="bg-gradient-to-br from-orange-50 to-blue-50 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow">
-       <div class="aspect-video bg-gradient-to-br from-purple-900 to-indigo-900 relative overflow-hidden flex items-center justify-center">
-        <div class="text-center">
-         <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-2xl hover:scale-110 transition-transform">
-          <svg class="w-10 h-10 text-white ml-1" fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z" />
-          </svg>
-         </div>
-         <p class="text-white text-lg font-bold">點擊下方按鈕觀看影片</p>
-        </div>
-       </div>
-       <div class="p-6">
-        <div class="flex items-center gap-2 mb-3"><span class="bg-purple-500 text-white text-xs px-3 py-1 rounded-full font-bold">📺 旅遊/綜藝節目</span> <span class="bg-orange-500 text-white text-xs px-3 py-1 rounded-full font-bold">台灣好吃驚</span>
-        </div>
-        <h3 class="text-xl font-black text-[#1e3a5f] mb-2">【台灣好吃驚! ビックリ台湾】第221集 日本人遊基隆吃爆飛魚卵香腸</h3>
-        <p class="text-gray-600 text-sm mb-4">完整節目，含嘿路島民與博勝行段落</p><a href="https://www.youtube.com/watch?v=FuQyZdx2z9g&amp;t=1063" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 w-full bg-red-600 text-white font-bold py-3 px-4 rounded-xl hover:bg-red-700 transition-colors shadow-lg">
-         <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-         </svg> 在 YouTube 觀看完整影片 </a>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section><!-- Order Process Section -->
-   <section class="py-16 md:py-24 px-4 bg-[#1e3a5f]">
-    <div class="max-w-5xl mx-auto">
-     <div class="text-center mb-12"><span class="inline-block bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">簡單三步驟</span>
-      <h2 class="text-3xl md:text-4xl font-black text-white mb-4">訂購流程</h2>
-      <p class="text-blue-200 text-lg">輕鬆下單，美味送到家</p>
-     </div>
-     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4"><!-- Step 1 -->
-      <div class="step-connector relative">
-       <div class="bg-white rounded-3xl p-6 md:p-8 text-center h-full">
-        <div class="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-black shadow-lg">
-         1
-        </div>
-        <div class="text-4xl mb-4">
-         💬
-        </div>
-        <h3 class="text-xl font-bold text-[#1e3a5f] mb-3">私訊下單</h3>
-        <p class="text-gray-600 leading-relaxed">私訊「<span class="font-bold text-orange-500">博勝行飛魚卵香腸</span>」FB粉專，回報您的訂購資訊，我們會回覆是否成功訂購</p>
-       </div>
-      </div><!-- Step 2 -->
-      <div class="step-connector relative">
-       <div class="bg-white rounded-3xl p-6 md:p-8 text-center h-full">
-        <div class="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-black shadow-lg">
-         2
-        </div>
-        <div class="text-4xl mb-4">
-         💳
-        </div>
-        <h3 class="text-xl font-bold text-[#1e3a5f] mb-3">確認匯款</h3>
-        <p class="text-gray-600 leading-relaxed">確認成功訂購後，完成匯款，並提供<span class="font-bold text-orange-500">匯款帳號後五碼</span></p>
-       </div>
-      </div><!-- Step 3 -->
-      <div class="relative">
-       <div class="bg-white rounded-3xl p-6 md:p-8 text-center h-full">
-        <div class="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-black shadow-lg">
-         3
-        </div>
-        <div class="text-4xl mb-4">
-         🚚
-        </div>
-        <h3 class="text-xl font-bold text-[#1e3a5f] mb-3">冷凍宅配</h3>
-        <p class="text-gray-600 leading-relaxed"><span class="font-bold text-orange-500">黑貓冷凍宅配</span>出貨，到貨後會以電話通知您</p>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section><!-- Discount & Shipping Section -->
-   <section class="py-16 md:py-24 px-4 bg-gradient-to-b from-orange-50 to-[#fff8f0]">
-    <div class="max-w-4xl mx-auto">
-     <div class="text-center mb-12"><span class="inline-block bg-[#1e3a5f] text-white px-4 py-2 rounded-full text-sm font-bold mb-4">超值優惠</span>
-      <h2 class="text-3xl md:text-4xl font-black text-[#1e3a5f] mb-4">運費與優惠說明</h2>
-     </div>
-     <div class="grid grid-cols-1 md:grid-cols-2 gap-6"><!-- Shipping -->
-      <div class="bg-white rounded-3xl p-6 md:p-8 shadow-lg border-4 border-[#1e3a5f]">
-       <div class="flex items-center gap-4 mb-4">
-        <div class="w-14 h-14 bg-[#1e3a5f] rounded-full flex items-center justify-center text-2xl">
-         🚚
-        </div>
-        <h3 class="text-2xl font-black text-[#1e3a5f]">運費說明</h3>
-       </div>
-       <div class="bg-blue-50 rounded-2xl p-4">
-        <p class="text-lg text-gray-700">黑貓冷凍宅配 <span class="text-3xl font-black text-[#1e3a5f]">$200</span></p>
-        <p class="text-sm text-gray-500 mt-2">全程冷凍配送保證新鮮有保障</p>
-       </div>
-       <div class="mt-4 bg-orange-100 rounded-2xl p-4">
-        <p class="text-lg font-bold text-orange-600 flex items-center gap-2"><span class="text-2xl">🎉</span> 滿 $3,000 免運費！</p>
-       </div>
-      </div><!-- Discounts -->
-      <div class="bg-white rounded-3xl p-6 md:p-8 shadow-lg border-4 border-orange-500">
-       <div class="flex items-center gap-4 mb-4">
-        <div class="w-14 h-14 bg-orange-500 rounded-full flex items-center justify-center text-2xl">
-         🎁
-        </div>
-        <h3 class="text-2xl font-black text-orange-500">滿額優惠</h3>
-       </div>
-       <div class="space-y-4">
-        <div class="bg-orange-50 rounded-2xl p-4 relative overflow-hidden">
-         <div class="absolute top-0 right-0 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl">
-          95折
-         </div>
-         <p class="text-gray-700">滿 <span class="font-black text-xl text-[#1e3a5f]">$5,264</span></p>
-         <p class="text-orange-600 font-bold">享 95 折（折後滿 $5,000）</p>
-        </div>
-        <div class="bg-gradient-to-r from-orange-100 to-amber-100 rounded-2xl p-4 relative overflow-hidden">
-         <div class="absolute top-0 right-0 bg-gradient-to-r from-orange-500 to-amber-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl">
-          9折
-         </div>
-         <p class="text-gray-700">滿 <span class="font-black text-xl text-[#1e3a5f]">$11,112</span></p>
-         <p class="text-orange-600 font-bold">享 9 折（折後滿 $10,000）</p>
-        </div>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section><!-- FAQ Section -->
-   <section class="py-16 md:py-24 px-4 bg-[#fff8f0]">
-    <div class="max-w-4xl mx-auto">
-     <div class="text-center mb-12"><span class="inline-block bg-orange-100 text-orange-600 px-4 py-2 rounded-full text-sm font-bold mb-4">有問必答</span>
-      <h2 class="text-3xl md:text-4xl font-black text-[#1e3a5f] mb-4">常見問題</h2>
-     </div>
-     <div class="space-y-4" id="faq-container"><!-- FAQ 2 -->
-      <div class="faq-item bg-white rounded-2xl shadow-md overflow-hidden"><button class="faq-toggle w-full p-5 md:p-6 text-left flex items-center justify-between gap-4 hover:bg-orange-50 transition-colors" onclick="toggleFaq(this)"> <span class="text-lg md:text-xl font-bold text-[#1e3a5f] faq-question" id="faq-q2">香腸要怎麼料理最好吃？</span> <span class="faq-icon text-orange-500 text-2xl transition-transform">+</span> </button>
-       <div class="faq-answer hidden px-5 md:px-6 pb-5 md:pb-6">
-        <p class="text-gray-600 leading-relaxed" id="faq-a2">建議用中小火慢煎，或氣炸鍋180度約8-10分鐘，外皮金黃酥脆，飛魚卵啵啵口感最佳！</p>
-       </div>
-      </div><!-- FAQ 3 -->
-      <div class="faq-item bg-white rounded-2xl shadow-md overflow-hidden"><button class="faq-toggle w-full p-5 md:p-6 text-left flex items-center justify-between gap-4 hover:bg-orange-50 transition-colors" onclick="toggleFaq(this)"> <span class="text-lg md:text-xl font-bold text-[#1e3a5f] faq-question" id="faq-q3">可以寄送到離島嗎？</span> <span class="faq-icon text-orange-500 text-2xl transition-transform">+</span> </button>
-       <div class="faq-answer hidden px-5 md:px-6 pb-5 md:pb-6">
-        <p class="text-gray-600 leading-relaxed" id="faq-a3">目前只配送台灣本島地區，離島暫不提供配送服務，敬請見諒。</p>
-       </div>
-      </div><!-- FAQ 4 -->
-      <div class="faq-item bg-white rounded-2xl shadow-md overflow-hidden"><button class="faq-toggle w-full p-5 md:p-6 text-left flex items-center justify-between gap-4 hover:bg-orange-50 transition-colors" onclick="toggleFaq(this)"> <span class="text-lg md:text-xl font-bold text-[#1e3a5f] faq-question" id="faq-q4">訂購後多久會收到？</span> <span class="faq-icon text-orange-500 text-2xl transition-transform">+</span> </button>
-       <div class="faq-answer hidden px-5 md:px-6 pb-5 md:pb-6">
-        <p class="text-gray-600 leading-relaxed" id="faq-a4">確認匯款後，約2-3個工作天出貨，黑貓宅配通常隔日送達（視地區而定）。</p>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section><!-- Contact Section -->
-   <section class="py-16 md:py-24 px-4 bg-white">
-    <div class="max-w-6xl mx-auto">
-     <div class="text-center mb-12"><span class="inline-block bg-orange-100 text-orange-600 px-4 py-2 rounded-full text-sm font-bold mb-4">📍 找到我們</span>
-      <h2 class="text-3xl md:text-4xl font-black text-[#1e3a5f] mb-4">聯絡資訊</h2>
-      <p class="text-gray-600 text-lg">歡迎來基隆八斗子找我們</p>
-     </div>
-     <div class="bg-gradient-to-br from-blue-50 to-orange-50 rounded-3xl overflow-hidden shadow-2xl p-8 md:p-12">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-       <div class="flex flex-col items-center text-center bg-white rounded-2xl p-6 shadow-lg">
-        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0 mb-4">
-         <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-         </svg>
-        </div>
-        <h3 class="font-black text-[#1e3a5f] mb-2 text-xl">門市地址</h3>
-        <p class="text-gray-700 leading-relaxed">基隆市中正區<br>
-          八斗街53之1號</p>
-       </div>
-       <div class="flex flex-col items-center text-center bg-white rounded-2xl p-6 shadow-lg">
-        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mb-4">
-         <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewbox="0 0 24 24">
-          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-         </svg>
-        </div>
-        <h3 class="font-black text-[#1e3a5f] mb-2 text-xl">Facebook 粉專</h3><a href="https://www.facebook.com/porksonfood" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline font-bold">博勝行飛魚卵香腸</a>
-        <p class="text-gray-600 text-sm mt-2">私訊詢問最快回覆</p>
-       </div>
-       <div class="flex flex-col items-center text-center bg-white rounded-2xl p-6 shadow-lg">
-        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mb-4">
-         <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-         </svg>
-        </div>
-        <h3 class="font-black text-[#1e3a5f] mb-2 text-xl">線上訂購</h3><a href="https://forms.gle/gxt5jKdJdok6Yr3n8" target="_blank" rel="noopener noreferrer" class="text-green-600 hover:underline font-bold">填寫訂購表單</a>
-        <p class="text-gray-600 text-sm mt-2">24小時接受訂單</p>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section><!-- Bottom CTA Section -->
-   <section class="py-16 md:py-20 px-4 bg-gradient-to-r from-[#1e3a5f] to-[#2d5a8f]">
-    <div class="max-w-4xl mx-auto text-center">
-     <div class="mb-6"><img src="https://media.canva.com/v2/image-resize/format:PNG/height:563/quality:100/uri:ifs%3A%2F%2FM%2Fab2fba49-59dc-469f-aa8a-344225407d2e/watermark:F/width:565?csig=AAAAAAAAAAAAAAAAAAAAAAEw_2HwOxnGehsHaFFUVH9bzuVsybHwf0flHOQYefT7&amp;exp=1768595122&amp;osig=AAAAAAAAAAAAAAAAAAAAAFfSsdHqj5czFwPkTgAkKC6eacQH7vzRy-FRaTsmD4MF&amp;signer=media-rpc&amp;x-canva-quality=screen" alt="博勝行飛魚卵香腸 LOGO" loading="lazy" onerror="this.style.display='none';" class="mx-auto" style="width: 100px; height: auto;">
-     </div>
-     <h2 class="text-2xl md:text-4xl font-black text-white mb-4">想嚐鮮？現在就訂購吧！</h2>
-     <p class="text-blue-200 text-lg mb-8">博勝行飛魚卵香腸，用心製作每一條</p>
-     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center"><a href="https://www.facebook.com/porksonfood" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-white text-[#1e3a5f] px-8 py-4 rounded-full text-lg md:text-xl font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 flex items-center justify-center gap-3">
-       <svg class="w-7 h-7 text-blue-600" fill="currentColor" viewbox="0 0 24 24">
-        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-       </svg> FB粉專私訊詢問 </a> <a href="https://forms.gle/gxt5jKdJdok6Yr3n8" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-full text-lg md:text-xl font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 flex items-center justify-center gap-3">
-       <svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-       </svg> 立即填單訂購 </a>
-     </div>
-    </div>
-   </section><!-- Footer -->
-   <footer class="py-8 px-4 bg-[#0f1f2f] text-center">
-    <p class="text-blue-200 text-sm mb-2">© 博勝行 版權所有</p>
-    <p class="text-blue-300 text-xs">基隆在地海味傳承</p>
-   </footer>
-  </div>
-  <script>
-    // Default configuration
-    const defaultConfig = {
-      hero_title: '飛魚卵香腸\n每一口咬下都是大海的味道',
-      hero_subtitle: '基隆八斗子在地職人 X 博勝行飛魚卵香腸\n高達30%爆卵飛魚卵 + 黑豬肉鮮嫩絞和 + 甘蔗煙燻古法\n每口啵啵啵，海味直擊心頭 漁村限定，過年必備伴手禮！',
-      primary_color: '#f97316',
-      secondary_color: '#1e3a5f',
-      background_color: '#fff8f0',
-      text_color: '#1e3a5f',
-      accent_color: '#ea580c',
-      font_family: 'Noto Sans TC',
-      font_size: 16,
-      faq_q2: '香腸要怎麼料理最好吃？',
-      faq_a2: '建議用中小火慢煎，或氣炸鍋180度約8-10分鐘，外皮金黃酥脆，飛魚卵啵啵口感最佳！',
-      faq_q3: '可以寄送到離島嗎？',
-      faq_a3: '目前只配送台灣本島地區，離島暫不提供配送服務，敬請見諒。',
-      faq_q4: '訂購後多久會收到？',
-      faq_a4: '確認匯款後，約2-3個工作天出貨，黑貓宅配通常隔日送達（視地區而定）。'
-    };
-
-    // FAQ toggle function
-    function toggleFaq(button) {
-      const answer = button.nextElementSibling;
-      const icon = button.querySelector('.faq-icon');
-      const isHidden = answer.classList.contains('hidden');
-      
-      // Close all other FAQs
-      document.querySelectorAll('.faq-answer').forEach(a => {
-        if (a !== answer) {
-          a.classList.add('hidden');
-          a.previousElementSibling.querySelector('.faq-icon').textContent = '+';
-          a.previousElementSibling.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博勝行飛魚卵香腸 | 基隆八斗子在地海味</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            box-sizing: border-box;
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #fff8f0;
         }
-      });
-      
-      // Toggle current FAQ
-      if (isHidden) {
-        answer.classList.remove('hidden');
-        icon.textContent = '−';
-        icon.style.transform = 'rotate(180deg)';
-      } else {
-        answer.classList.add('hidden');
-        icon.textContent = '+';
-        icon.style.transform = 'rotate(0deg)';
-      }
-    }
 
-    // Config change handler
-    async function onConfigChange(config) {
-      const baseFontStack = 'Noto Sans TC, sans-serif';
-      const customFont = config.font_family || defaultConfig.font_family;
-      const baseSize = config.font_size || defaultConfig.font_size;
-      
-      // Update hero title
-      const heroTitle = document.getElementById('hero-title');
-      if (heroTitle) {
-        const titleText = config.hero_title || defaultConfig.hero_title;
-        const parts = titleText.split('\n');
-        heroTitle.innerHTML = parts[0] + '<br><span class="text-orange-400">' + (parts[1] || '') + '</span>';
-      }
-      
-      // Update hero subtitle
-      const heroSubtitle = document.getElementById('hero-subtitle');
-      if (heroSubtitle) {
-        const subtitleText = config.hero_subtitle || defaultConfig.hero_subtitle;
-        const formattedText = subtitleText
-          .replace(/30%爆卵飛魚卵/g, '<span class="text-orange-400 font-bold">30%爆卵飛魚卵</span>')
-          .replace(/甘蔗煙燻古法/g, '<span class="text-orange-400 font-bold">甘蔗煙燻古法</span>')
-          .replace(/啵啵啵/g, '<span class="text-orange-400 font-bold">啵啵啵</span>')
-          .replace(/\n/g, '<br class="hidden md:block">');
-        heroSubtitle.innerHTML = formattedText;
-      }
-      
-      // Update FAQ items
-      for (let i = 2; i <= 4; i++) {
-        const qEl = document.getElementById(`faq-q${i}`);
-        const aEl = document.getElementById(`faq-a${i}`);
-        if (qEl) qEl.textContent = config[`faq_q${i}`] || defaultConfig[`faq_q${i}`];
-        if (aEl) aEl.textContent = config[`faq_a${i}`] || defaultConfig[`faq_a${i}`];
-      }
-      
-      // Apply font family
-      document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
-    }
-
-    // Map to capabilities
-    function mapToCapabilities(config) {
-      return {
-        recolorables: [
-          {
-            get: () => config.background_color || defaultConfig.background_color,
-            set: (value) => {
-              config.background_color = value;
-              window.elementSdk.setConfig({ background_color: value });
-            }
-          },
-          {
-            get: () => config.secondary_color || defaultConfig.secondary_color,
-            set: (value) => {
-              config.secondary_color = value;
-              window.elementSdk.setConfig({ secondary_color: value });
-            }
-          },
-          {
-            get: () => config.text_color || defaultConfig.text_color,
-            set: (value) => {
-              config.text_color = value;
-              window.elementSdk.setConfig({ text_color: value });
-            }
-          },
-          {
-            get: () => config.primary_color || defaultConfig.primary_color,
-            set: (value) => {
-              config.primary_color = value;
-              window.elementSdk.setConfig({ primary_color: value });
-            }
-          },
-          {
-            get: () => config.accent_color || defaultConfig.accent_color,
-            set: (value) => {
-              config.accent_color = value;
-              window.elementSdk.setConfig({ accent_color: value });
-            }
-          }
-        ],
-        borderables: [],
-        fontEditable: {
-          get: () => config.font_family || defaultConfig.font_family,
-          set: (value) => {
-            config.font_family = value;
-            window.elementSdk.setConfig({ font_family: value });
-          }
-        },
-        fontSizeable: {
-          get: () => config.font_size || defaultConfig.font_size,
-          set: (value) => {
-            config.font_size = value;
-            window.elementSdk.setConfig({ font_size: value });
-          }
+        .wave-bg {
+            background: linear-gradient(180deg, #1e3a5f 0%, #2d4a6f 100%);
+            position: relative;
+            overflow: hidden;
         }
-      };
-    }
 
-    // Map to edit panel values
-    function mapToEditPanelValues(config) {
-      return new Map([
-        ['hero_title', config.hero_title || defaultConfig.hero_title],
-        ['hero_subtitle', config.hero_subtitle || defaultConfig.hero_subtitle],
-        ['faq_q2', config.faq_q2 || defaultConfig.faq_q2],
-        ['faq_a2', config.faq_a2 || defaultConfig.faq_a2],
-        ['faq_q3', config.faq_q3 || defaultConfig.faq_q3],
-        ['faq_a3', config.faq_a3 || defaultConfig.faq_a3],
-        ['faq_q4', config.faq_q4 || defaultConfig.faq_q4],
-        ['faq_a4', config.faq_a4 || defaultConfig.faq_a4]
-      ]);
-    }
+        .wave-bg::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23fff8f0' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") no-repeat bottom;
+            background-size: cover;
+        }
 
-    // Initialize SDK
-    if (window.elementSdk) {
-      window.elementSdk.init({
-        defaultConfig,
-        onConfigChange,
-        mapToCapabilities,
-        mapToEditPanelValues
-      });
-    }
-  </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9ddce79673484a97',t:'MTc3Mzc2MDAxOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+        .bubble {
+            animation: float 3s ease-in-out infinite;
+            border-radius: 50%;
+        }
+        .bubble:nth-child(2) { animation-delay: 0.5s; }
+        .bubble:nth-child(3) { animation-delay: 1s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-15px) scale(1.05); }
+        }
+
+        .product-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .step-connector::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -2rem;
+            width: 4rem;
+            height: 2px;
+            background: #f97316;
+            z-index: 0;
+        }
+        @media (max-width: 768px) {
+            .step-connector::after { display: none; }
+        }
+
+        .discount-badge {
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+        }
+
+        .fish-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 15c8 0 15 5 15 10s-7 10-15 10-15-5-15-10 7-10 15-10z' fill='%23f97316' fill-opacity='0.03'/%3E%3C/svg%3E");
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            cursor: pointer;
+            background: #000;
+        }
+        .video-container iframe, .video-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="fish-pattern">
+
+    <!-- Hero Section -->
+    <section class="wave-bg min-h-[650px] flex items-center justify-center px-4 py-20">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <div class="mb-8">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczOb9oZq7Pwo0xOnd4k3j4bZ1ZC54ITFhgHcnJzDqPUJSzNpqpQIEI9Sk-SHcdCeAiePoXRhYwdmMstkA93Lj0pX_XGc8XUlNGPgtJeDJXQZa7W0AFrC7mLFwcZmVN-hikkhSEylicJvnjC60ykRgVg=w565-h563-s-no-gm?authuser=0" 
+                     alt="博勝行 Logo" class="mx-auto w-32 md:w-44 drop-shadow-md">
+            </div>
+
+            <div class="flex justify-center gap-6 mb-8">
+                <div class="bubble w-4 h-4 bg-orange-400 opacity-80"></div>
+                <div class="bubble w-3 h-3 bg-blue-300 opacity-60"></div>
+                <div class="bubble w-5 h-5 bg-orange-500 opacity-90"></div>
+            </div>
+
+            <h1 class="text-4xl md:text-6xl font-black text-white leading-tight mb-6 drop-shadow-xl">
+                飛魚卵香腸<br>
+                <span class="text-orange-400">每一口咬下都是大海的味道</span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-blue-50 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
+                基隆八斗子在地職人 X 博勝行精製<br>
+                高達 <span class="text-orange-400 font-bold text-2xl">30%</span> 爆卵飛魚卵 ＋ 黑豬肉鮮嫩絞和<br>
+                甘蔗煙燻古法，每口 <span class="text-orange-400 font-bold italic">啵啵啵</span>，海味直擊心頭！
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-5 justify-center items-center">
+                <a href="https://www.facebook.com/porksonfood" target="_blank" class="w-full sm:w-auto bg-white text-[#1e3a5f] px-10 py-4 rounded-full text-lg font-bold shadow-xl hover:bg-blue-50 transition-all flex items-center justify-center gap-3">
+                    <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    最新消息 / 私訊詢問
+                </a>
+                <a href="https://forms.gle/gxt5jKdJdok6Yr3n8" target="_blank" class="w-full sm:w-auto bg-orange-500 text-white px-10 py-4 rounded-full text-lg font-bold shadow-xl hover:bg-orange-600 transition-all flex items-center justify-center gap-3">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                    立即填單訂購
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="inline-block bg-orange-100 text-orange-600 px-4 py-1 rounded-full text-sm font-bold mb-4">精選商品</span>
+                <h2 class="text-3xl md:text-4xl font-black text-[#1e3a5f]">職人手工製作</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-3xl overflow-hidden shadow-md">
+                    <div class="relative h-56 bg-gray-100">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczO3SOU6WaYiDxl31EeysltctxPWxIGd9ZMT45LREGfBIZIszyw2kiPhTBaNG4fwA6sCdVnZfJG8-NGV_4VrM0K6Yr6aqmX1KyOE6krREZj_ME2-J1kNJMPybGcvacpDsgFOgf3DsIIqg0N42OKuURw=w1605-h903-s-no-gm?authuser=0" alt="極上飛魚卵香腸" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 discount-badge text-white text-xs font-bold px-3 py-2">熱銷中</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#1e3a5f] mb-2">極上飛魚卵香腸</h3>
+                        <p class="text-gray-500 text-sm mb-4">5入裝 (300g) / 甘蔗煙燻</p>
+                        <div class="flex items-end justify-between">
+                            <span class="text-2xl font-black text-orange-500">$370 <small class="text-gray-400 line-through text-sm">$450</small></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-3xl overflow-hidden shadow-md">
+                    <div class="relative h-56 bg-gray-100">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczNm9Q867I1PJm5IJ-O6aQcnPQO3FjohXQ1ZQpa9aaV9OwsTzhUUo02vletvROL2nPQXyjYw_UX8lIx873GHS69FDaEcqhgp4sGYJnbobi8nO3xHO8eknZiFPwJ2L76emgslIjcHrnVkYXujH8SZNBw=w903-h903-s-no-gm?authuser=0" alt="口袋飛魚卵香腸" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#1e3a5f] mb-2">口袋飛魚卵香腸</h3>
+                        <p class="text-gray-500 text-sm mb-4">1入裝 (60g) / 即食方便</p>
+                        <div class="flex items-end justify-between">
+                            <span class="text-2xl font-black text-orange-500">$80 <small class="text-gray-400 line-through text-sm">$90</small></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-3xl overflow-hidden shadow-md">
+                    <div class="relative h-56 bg-gray-100">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczP5yNLLcFnM6mdOIXds1xdxf3yAvjZRsnTMBWzgSUFmU43IoONE-5jkvuUStSKyExw44L5s2WKmljyucD4IUinVP1OWE6ThYZgnxmlllCSewWgYxuApkv5zoimM2HdrqFfdPYxBDigu-zM5Jjktlh8=w1346-h903-s-no-gm?authuser=0" alt="經典紙盒禮盒" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#1e3a5f] mb-2">經典紙盒禮盒</h3>
+                        <p class="text-gray-500 text-sm mb-4">5入精美包裝 / 送禮首選</p>
+                        <div class="flex items-end justify-between">
+                            <span class="text-2xl font-black text-orange-500">$400</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-3xl overflow-hidden shadow-md">
+                    <div class="relative h-56 bg-gray-100">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczNWBHTt8-0Q90V6aYbjJWm2RNwjIS7Za1s3MnmSOUHdt-sfdgnxtD-Y1Yakvxh5YpDWFdpBtObSg9xfH7AoB33BvUKcYRnVrK-FTIRsIWU4rxbcFDLFnNf1xUmoR23w-y-glS-uHR6LVU0ksaljSwQ=w1355-h903-s-no-gm?authuser=0" alt="頂級木質禮盒" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-[#1e3a5f] mb-2">頂級木質禮盒</h3>
+                        <p class="text-gray-500 text-sm mb-4">質感木盒 / 貴賓專屬</p>
+                        <div class="flex items-end justify-between">
+                            <span class="text-2xl font-black text-orange-500">$550 <small class="text-gray-400 line-through text-sm">$600</small></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Coverage Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-black text-[#1e3a5f] mb-4">媒體報導與推薦</h2>
+                <p class="text-gray-600">點擊下方預覽圖即可在網頁內直接播放</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <!-- Video 1: 神之路 -->
+                <div class="rounded-3xl overflow-hidden shadow-xl bg-gray-900 group">
+                    <div class="video-container" onclick="playVideo(this, 'igagkT9s59Y', 1606)">
+                        <img src="https://img.youtube.com/vi/igagkT9s59Y/maxresdefault.jpg" alt="神之路報導" class="opacity-80 group-hover:opacity-100 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center text-white shadow-2xl group-hover:scale-110 transition-transform">
+                                <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="bg-red-100 text-red-600 text-xs px-2 py-1 rounded-full font-bold">推薦</span>
+                        </div>
+                        <h4 class="font-bold text-[#1e3a5f] text-lg">【神之路】許效舜回基隆，驚艷爆卵口感！</h4>
+                        <p class="text-gray-500 text-sm mt-2">舜哥親自探訪老家，深度體驗八斗子漁村魅力與職人灌香腸過程。</p>
+                    </div>
+                </div>
+
+                <!-- Video 2: 1000步 -->
+                <div class="rounded-3xl overflow-hidden shadow-xl bg-gray-900 group">
+                    <div class="video-container" onclick="playVideo(this, 'MtE39vg_17k', 1)">
+                        <img src="https://img.youtube.com/vi/MtE39vg_17k/maxresdefault.jpg" alt="1000步的繽紛台灣" class="opacity-80 group-hover:opacity-100 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center text-white shadow-2xl group-hover:scale-110 transition-transform">
+                                <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="bg-blue-100 text-blue-600 text-xs px-2 py-1 rounded-full font-bold">產地探索</span>
+                        </div>
+                        <h4 class="font-bold text-[#1e3a5f] text-lg">【1000步的繽紛台灣】體驗「海上黃金」</h4>
+                        <p class="text-gray-500 text-sm mt-2">從草蓆捕魚卵法到手作體驗，看八斗子人如何與海共存。</p>
+                    </div>
+                </div>
+
+                <!-- Video 3: 年代新聞 -->
+                <div class="rounded-3xl overflow-hidden shadow-xl bg-gray-900 group">
+                    <div class="video-container" onclick="playVideo(this, 'OuYya_uUrF0')">
+                        <img src="https://img.youtube.com/vi/OuYya_uUrF0/maxresdefault.jpg" alt="年代新聞報導" class="opacity-80 group-hover:opacity-100 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center text-white shadow-2xl group-hover:scale-110 transition-transform">
+                                <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="bg-orange-100 text-orange-600 text-xs px-2 py-1 rounded-full font-bold">新聞報導</span>
+                        </div>
+                        <h4 class="font-bold text-[#1e3a5f] text-lg">【年代新聞】唯一「爆卵」飛魚卵香腸專題</h4>
+                        <p class="text-gray-500 text-sm mt-2">台灣向錢衝專題報導，解密高比例飛魚卵的極致美味。</p>
+                    </div>
+                </div>
+
+                <!-- Video 4: 台灣好吃驚 -->
+                <div class="rounded-3xl overflow-hidden shadow-xl bg-gray-900 group">
+                    <div class="video-container" onclick="playVideo(this, 'FuQyZdx2z9g', 1063)">
+                        <img src="https://img.youtube.com/vi/FuQyZdx2z9g/maxresdefault.jpg" alt="台灣好吃驚報導" class="opacity-80 group-hover:opacity-100 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center text-white shadow-2xl group-hover:scale-110 transition-transform">
+                                <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="bg-purple-100 text-purple-600 text-xs px-2 py-1 rounded-full font-bold">美食旅遊</span>
+                        </div>
+                        <h4 class="font-bold text-[#1e3a5f] text-lg">【台灣好吃驚】日本人驚艷的海島美味</h4>
+                        <p class="text-gray-500 text-sm mt-2">日本主持人深入八斗子，品嚐這份讓外國朋友也讚嘆的在地美食。</p>
+                    </div>
+                </div>
+
+                <!-- Video 5: WellMedia -->
+                <div class="rounded-3xl overflow-hidden shadow-xl bg-gray-900 group">
+                    <div class="video-container" onclick="playVideo(this, 'q_HgoZp79aI')">
+                        <img src="https://img.youtube.com/vi/q_HgoZp79aI/maxresdefault.jpg" alt="WellMedia 報導" class="opacity-80 group-hover:opacity-100 transition-opacity">
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                            <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center text-white shadow-2xl group-hover:scale-110 transition-transform">
+                                <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full font-bold">人文歷史</span>
+                        </div>
+                        <h4 class="font-bold text-[#1e3a5f] text-lg">從台灣離島到全台最大飛魚卵聖地！</h4>
+                        <p class="text-gray-500 text-sm mt-2">WellMedia 帶路揭開八斗子綠寶石秘境，探索漁村的歷史變遷與美景。</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Ordering Process Section -->
+    <section class="py-24 bg-[#1e3a5f] text-white overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 relative">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black mb-4">訂購流程</h2>
+                <p class="text-blue-200">簡單三步驟，美味直送到府</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+                <div class="text-center relative z-10 step-connector">
+                    <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-black shadow-lg">1</div>
+                    <h3 class="text-xl font-bold mb-3 italic">私訊下單</h3>
+                    <p class="text-blue-100 opacity-90">透過 FB 粉專私訊回報訂購資訊</p>
+                </div>
+                <div class="text-center relative z-10 step-connector">
+                    <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-black shadow-lg">2</div>
+                    <h3 class="text-xl font-bold mb-3 italic">確認匯款</h3>
+                    <p class="text-blue-100 opacity-90">完成匯款後提供帳號後五碼</p>
+                </div>
+                <div class="text-center relative z-10">
+                    <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-black shadow-lg">3</div>
+                    <h3 class="text-xl font-bold mb-3 italic">冷凍宅配</h3>
+                    <p class="text-blue-100 opacity-90">黑貓冷凍宅配到府，新鮮保證</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shipping & Promo Section -->
+    <section class="py-20 px-4 bg-orange-50">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-3xl shadow-lg border-2 border-blue-900">
+                    <h3 class="text-2xl font-black text-blue-900 mb-6 flex items-center gap-3">
+                        <span class="text-3xl">🚚</span> 運費說明
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center border-b pb-2">
+                            <span class="text-gray-600">冷凍宅配</span>
+                            <span class="font-bold text-blue-900">$200</span>
+                        </div>
+                        <div class="bg-orange-100 p-4 rounded-xl text-orange-700 font-bold text-center">
+                            滿 $3,000 免運費！
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-lg border-2 border-orange-500">
+                    <h3 class="text-2xl font-black text-orange-600 mb-6 flex items-center gap-3">
+                        <span class="text-3xl">🎁</span> 滿額優惠
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between items-center bg-orange-50 p-3 rounded-lg">
+                            <span class="text-gray-700">滿 $5,000</span>
+                            <span class="bg-orange-500 text-white px-2 py-1 rounded text-sm">95折</span>
+                        </li>
+                        <li class="flex justify-between items-center bg-orange-50 p-3 rounded-lg">
+                            <span class="text-gray-700">滿 $10,000</span>
+                            <span class="bg-orange-500 text-white px-2 py-1 rounded text-sm">9折</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 px-4">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-black text-center text-[#1e3a5f] mb-12">常見問題</h2>
+            <div class="space-y-4">
+                <div class="faq-item bg-white rounded-2xl shadow-sm border">
+                    <button class="w-full p-6 text-left flex justify-between items-center font-bold text-[#1e3a5f] text-lg" onclick="toggleFaq(this)">
+                        <span>香腸要怎麼料理最好吃？</span>
+                        <span class="faq-icon transition-transform text-orange-500 text-2xl">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="p-6 pt-0 text-gray-600 leading-relaxed">
+                            建議使用中小火慢煎，或氣炸鍋 180 度約 8-10 分鐘。外皮金黃酥脆後，飛魚卵的「啵啵」口感最為明顯！
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item bg-white rounded-2xl shadow-sm border">
+                    <button class="w-full p-6 text-left flex justify-between items-center font-bold text-[#1e3a5f] text-lg" onclick="toggleFaq(this)">
+                        <span>訂購後多久會收到？</span>
+                        <span class="faq-icon transition-transform text-orange-500 text-2xl">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="p-6 pt-0 text-gray-600 leading-relaxed">
+                            確認匯款後，約 2-3 個工作天出貨。黑貓宅配通常隔日送達（視地區配送狀況而定）。
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item bg-white rounded-2xl shadow-sm border">
+                    <button class="w-full p-6 text-left flex justify-between items-center font-bold text-[#1e3a5f] text-lg" onclick="toggleFaq(this)">
+                        <span>可以寄送到離島嗎？</span>
+                        <span class="faq-icon transition-transform text-orange-500 text-2xl">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="p-6 pt-0 text-gray-600 leading-relaxed">
+                            目前僅提供台灣本島配送服務。離島配送因物流限制暫未開放，敬請見諒。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 px-4 bg-white border-t">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-3xl font-black text-[#1e3a5f] mb-12">聯絡資訊</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-blue-50 p-8 rounded-3xl">
+                    <div class="text-4xl mb-4">📍</div>
+                    <h4 class="font-bold text-[#1e3a5f] text-xl mb-2">門市地址</h4>
+                    <p class="text-gray-600">基隆市中正區八斗街53之1號</p>
+                </div>
+                <div class="bg-blue-50 p-8 rounded-3xl">
+                    <div class="text-4xl mb-4">💬</div>
+                    <h4 class="font-bold text-[#1e3a5f] text-xl mb-2">FB 粉專</h4>
+                    <a href="https://www.facebook.com/porksonfood" target="_blank" class="text-blue-600 hover:underline">博勝行飛魚卵香腸</a>
+                </div>
+                <div class="bg-blue-50 p-8 rounded-3xl">
+                    <div class="text-4xl mb-4">📝</div>
+                    <h4 class="font-bold text-[#1e3a5f] text-xl mb-2">線上訂購</h4>
+                    <a href="https://forms.gle/gxt5jKdJdok6Yr3n8" target="_blank" class="text-blue-600 hover:underline">點此填寫訂購表單</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-blue-950 text-white text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczOb9oZq7Pwo0xOnd4k3j4bZ1ZC54ITFhgHcnJzDqPUJSzNpqpQIEI9Sk-SHcdCeAiePoXRhYwdmMstkA93Lj0pX_XGc8XUlNGPgtJeDJXQZa7W0AFrC7mLFwcZmVN-hikkhSEylicJvnjC60ykRgVg=w565-h563-s-no-gm?authuser=0" 
+                 alt="博勝行" class="w-16 mx-auto mb-6 opacity-90 drop-shadow-sm">
+            <p class="text-blue-200 text-sm mb-2 font-medium">© 博勝行 版權所有</p>
+            <p class="text-blue-400 text-xs">職人精神，傳承基隆在地海味文化</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            const isActive = item.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+            if (!isActive) item.classList.add('active');
+        }
+
+        function playVideo(container, videoId, startTime = 0) {
+            const iframe = document.createElement('iframe');
+            let src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+            if (startTime > 0) src += `&start=${startTime}`;
+            
+            iframe.setAttribute('src', src);
+            iframe.setAttribute('frameborder', '0');
+            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+            iframe.setAttribute('allowfullscreen', 'true');
+            
+            container.innerHTML = '';
+            container.appendChild(iframe);
+        }
+    </script>
+</body>
 </html>
